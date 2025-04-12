@@ -1,0 +1,144 @@
+.parent {
+    display: flex;
+    text-align: center;
+    overflow: hidden; /*внутренние блоки не выходят за пределы*/
+    width: 100%;
+    background-color: rgba(255, 0, 0, 0.62);
+}
+
+
+#input-container {
+    padding-top: 20px;
+    width: 35%;
+    display: inline-block;
+    background-color: aliceblue;
+}
+
+#input-container label {
+    font-weight: bolder;
+}
+
+#submit-button-container {
+    padding-top: 20px;
+    width: 25%;
+    background-color: aliceblue;
+    display: table-column;
+}
+
+#tick-button {
+    background-image: url(../resources/tick.png);
+    background-size: 120px, 120px;
+    background-color: aliceblue;
+    border: transparent;
+    width: 120px;
+    height: 120px;
+    font-family: 'Impact';
+    transition: .8s ease-in-out;
+    color: white;
+    border-radius: 60px;
+}
+
+#tick-button:hover {
+    background-color: #58d263;
+    background-image: none;
+    border-radius: 60px;
+}
+
+#replacement {
+    display: none;
+    width: 120px;
+    height: 120px;
+    background-image: url(../resources/boom.png);
+    background-size: 120px, 120px;
+    font-size: 16px;
+    color: red;
+    border-radius: 60px;
+}
+
+#canvas {
+    background-color: white;
+    border: 10px solid lightcyan;
+    padding: 5px;
+}
+
+.table-container {
+    background-color: aliceblue;
+    float: right;
+    display: inline-block;
+    text-align: center;
+    padding-top: 20px;
+}
+
+#stats {
+    width: 90%;
+    border-collapse: separate;
+    border-spacing: 4px;
+}
+
+#stats td {
+    padding: 10px;
+    background-color: #e1ffff;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+
+.table-stats-header {
+    color: white;
+    background-color: #58d263;
+    text-align: center;
+}
+.padding-column {
+    padding: 11px;
+}
+
+body {
+    font-family: "Arial", serif;
+    font-weight: bold;
+}
+
+.navigation-button {
+    font-family: "Arial", serif;
+    font-weight: bold;
+    width: 250px;
+    height: 100px;
+    color: black;
+    font-size: large;
+    border-radius: 20px;
+    border: 1px solid lightsteelblue;
+    background-color: transparent;
+}
+
+.navigation-button:hover {
+    font-family: "Arial", serif;
+    font-weight: bold;
+    background-color: lightsteelblue;
+    color: white;
+}
+
+#clockCanvas {
+    background-color: aliceblue;
+    border-radius: 260px;
+}
+
+#inputs-and-button-container {
+    width: 50%;
+    display: block;
+}
+
+.main-container {
+    display: flex; /* Расположить элементы в строку */
+    justify-content: center; /* Выровнять элементы по горизонтали */
+    align-items: center; /* Выровнять элементы по вертикали */
+    gap: 20px;
+}
+
+.child{
+    width: 50%;
+    display: flex;
+    text-align: center; /* Выровнять текст внутри блока по центру */
+    padding: 10px; /* Внутренние отступы */
+    border: 1px solid #ccc; /* Рамка для визуального различия */
+    border-radius: 5px;
+}

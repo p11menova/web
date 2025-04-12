@@ -1,0 +1,100 @@
+<!-- main.xhtml -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core">
+<head>
+    <link rel="stylesheet" type="text/css" href="styles/style.css"/>
+    <title>joopa</title>
+</head>
+<h:body style="background-color: aliceblue">
+    <div class="header" style="background-color: lightsteelblue; padding: 40px">
+        <h2 style="text-align: center"> WEB LAB 3</h2>
+        <div style="display: inline-flex; align-items: center;">
+            <h3 style="margin: 0 10px 0 0;">ekaterina pim</h3>
+            <img src="resources/emojisky.com-5603.png" style="width: 35px; height: 35px;" alt=""/>
+        </div>
+        <h3 style="text-align: right">variant 88</h3>
+    </div>
+    <h:panelGroup styleClass="main-container">
+        <div class="child" id="inputs-and-button-container">
+            <canvas id="graphCanvas" width="400px" height="400px" style="border: 1px solid red"> </canvas>
+    <h:form>
+        <h:panelGrid columns="3" cellpadding="10">
+            <!-- Селектор для координаты X -->
+
+            <h:outputLabel value="Выберите координату X:" for="xSelect"/>
+            <h:selectOneRadio id="xSelect" value="#{formBean.x}">
+                <f:selectItems value="#{formBean.get1()}"/>
+                <f:selectItems value="#{formBean.xOptions}" var="option" itemValue="#{option}" itemLabel="#{option}"/>
+            </h:selectOneRadio>
+
+            <!-- Селектор для радиуса R -->
+            <h:outputLabel value="Выберите радиус R:" for="rSelect"/>
+            <h:selectOneRadio id="rSelect" value="#{formBean.r}">
+                <f:selectItems value="#{formBean.rOptions}" var="radius" itemValue="#{radius}" itemLabel="#{radius}"/>
+            </h:selectOneRadio>
+
+            <!-- Кнопка для проверки точки -->
+            <h:commandLink value="Проверить точку" action="#{formBean.checkPoint}" />
+
+            <!-- Вывод результата проверки -->
+            <h:outputText value="#{formBean.result}" rendered="#{not empty formBean.result}" colspan="3"/>
+        </h:panelGrid>
+    </h:form>
+        </div>
+
+
+
+        <h:panelGroup layout="block" styleClass="child" id="table-stats">
+            <div id="submit-button-container">
+                <h:commandButton class="tick-button" type="submit" id="tick-button"/>
+            </div>
+            <div id="replacement"> </div>
+                <h2 style="color: #ff0000" id="error"> </h2>
+
+            <table>
+                <thead>
+                <tr>
+                    <th class="table-stats-header">
+                        <h3>
+                            <em class="table-stats-header-coords">
+                                <i>x</i>
+                            </em>
+                        </h3>
+                    </th>
+                    <th class="table-stats-header">
+                        <h3>
+                            <em class="table-stats-header-coords">
+                                <i>y</i>
+                            </em>
+                        </h3>
+                    </th>
+                    <th class="table-stats-header">
+                        <h3>
+                            <em class="table-stats-header-coords">
+                                <i>R</i>
+                            </em>
+                        </h3>
+                    </th>
+                    <th class="table-stats-header">
+                        <h3>Result</h3>
+                    </th>
+                    <th class="table-stats-header">
+                        <h3>Execution time</h3>
+                    </th>
+                    <th class="table-stats-header">
+                        <h3>Time</h3>
+                    </th>
+                </tr>
+                </thead>
+            </table>
+        </h:panelGroup>
+    </h:panelGroup>
+
+
+    <h:form styleClass="">
+        <h:commandButton styleClass="navigation-button" value="CO BACK" outcome="go-to-index" action="index.xhtml"/>
+    </h:form>
+    <script src="js/main.js"> </script>
+</h:body>
+
+</html>
