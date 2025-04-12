@@ -1,0 +1,68 @@
+button {
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: rgba(169, 169, 169, 0.27); /* Серый фон при наведении */
+  border: 1px solid #ccc;
+}
+
+button.selected {
+  background-color: rgba(255, 0, 195, 0.62); /* Ярко-розовый фон для выбранных */
+  color: white;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* Расстояние между элементами */
+  font-family: Arial, sans-serif;
+}
+
+.login_form, .register_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 15px; /* Расстояние между элементами формы */
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid lightgray;
+  font-size: 1rem;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: rgba(255, 0, 195, 0.62);
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 0, 195, 0.62);
+}
+
+h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+}
+
+button[type="submit"] {
+  align-self: center;
+  width: auto;
+}

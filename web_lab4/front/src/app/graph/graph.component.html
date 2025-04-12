@@ -1,0 +1,80 @@
+<p>graph works!</p>
+<div class="main-container">
+  <div class = "left-child">
+<canvas id="canvas" width="450px" height="450px" style="margin-left: 5%"></canvas>
+
+<div class="coords-inputs">
+
+  <div class="input-group">
+  <label class="label">выберите X координату</label>
+  <div class="x-buttons">
+    <button
+      type="button"
+      *ngFor="let x of xCoordinates"
+      [ngClass]="{ 'selected': selectedX === x }"
+      (click)="selectX(x)"
+    >
+      {{ x }}
+    </button>
+
+  </div>
+</div>
+
+<!-- Input for Y Coordinate -->
+<div class="input-group">
+  <label class="label">введите Y координату</label>
+  <br>
+  <input name="y_coord" style="width: 25%; height: 20px" type="number" min="-3" max="5" step="0.1" placeholder="-3 ... 5">
+</div>
+
+<!-- Input for Radius -->
+<div class="input-group">
+  <label class="label">выберите радиус:</label>
+  <div class="radius-buttons" >
+
+    <button
+      type="button"
+      *ngFor="let radius of radii"
+      [ngClass]="{ 'selected': selectedRadius === radius }"
+      (click)="selectRadius(radius)"
+    >
+      {{ radius }}
+    </button>
+  </div>
+</div>
+  <div class="buttons-container">
+  <button (click)="goBack()">НАЗАД</button>
+  <button (click)="submit()" class="submit-button"> ПРОВЕРИТЬ </button>
+  <button (click)="clear()" class="submit-button"> ОЧИСТИТЬ </button>
+  </div>
+
+</div>
+</div>
+<div class="right-child">
+  <table class="results-table">
+    <thead>
+    <tr>
+      <th>x</th>
+      <th>y</th>
+      <th>r</th>
+      <th>RESULT</th>
+      <th>CURRENT TIME</th>
+      <th>SCRIPT TIME</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let point of points">
+      <td>{{ point.x }}</td>
+      <td>{{ point.y }}</td>
+      <td>{{ point.radius }}</td>
+      <td [ngClass]="{ 'text-true': point.result, 'text-false': !point.result }">
+        {{ point.result ? 'TRUE' : 'FALSE' }}
+      </td>
+      <td>{{ point.cur_time }}</td>
+      <td>{{ point.script_time }} ms</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+  </div>

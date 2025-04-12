@@ -1,0 +1,45 @@
+<p>home works!</p>
+<div class="home" style="display: flex; flex-direction: column; gap: 10px">
+  <canvas id="clockCanvas" width="250px" height="250px" ></canvas>
+  <h1>авторизуйтесь пожалуйста</h1>
+  <div class="login_form" *ngIf="show_login_form">
+    <form (ngSubmit)="login()" #userForm="ngForm" style="text-align: center; display:block;">
+      <input type="text" name="username" [(ngModel)]="user.username" required #username="ngModel"
+             placeholder="введите ЛОГИН">
+      <br>
+      <br>
+      <input type="password" name="password" [(ngModel)]="user.password" required #password="ngModel"
+             placeholder="введите ПАРОЛЬ">
+      <br>
+      <br>
+      <div *ngIf="error_msg" class="error-message" style="color: red; margin-bottom: 10px;">
+        {{ error_msg }}
+      </div>
+      <button type="submit">ВОЙТИ</button>
+    </form>
+    <button type="submit" (click)="changeLogForm()">#меняещенет<br>ЗАРЕГИСТИРОВАТЬСЯ</button>
+  </div>
+  <div class="register_form" *ngIf="!show_login_form">
+    <form (ngSubmit)="register()">
+      <input type="text" name="username" [(ngModel)]="user.username" required #username="ngModel"
+             placeholder="введите ЛОГИН">
+      <br>
+      <br>
+      <input type="password" name="password" [(ngModel)]="user.password" required #password="ngModel"
+             placeholder="введите ПАРОЛЬ">
+      <br>
+      <br>
+      <input type="password" name="repeated_password" [(ngModel)]="user.repeated_password" required
+             #repeated_password="ngModel" placeholder="повторите ПАРОЛЬ">
+      <br>
+      <br>
+      <div *ngIf="error_msg" class="error-message" style="color: red; margin-bottom: 10px;">
+        {{ error_msg }}
+      </div>
+      <br>
+      <button type="submit"> ЗАРЕГАТЬСЯ</button>
+    </form>
+    <button type="submit" (click)="changeLogForm()">#нетяесть</button>
+
+  </div>
+</div>

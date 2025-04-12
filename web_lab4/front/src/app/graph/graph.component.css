@@ -1,0 +1,89 @@
+div {
+  font-family: Arial;
+}
+
+.main-container {
+  display: flex;
+  justify-content: space-between; /* Распределить элементы по сторонам */
+  align-items: flex-start; /* Выравнивание по верхнему краю */
+  gap: 50px; /* Отступ между элементами */
+}
+
+.left-child {
+  text-align: center;
+  flex: 1; /* Занимает оставшееся пространство */
+}
+
+.right-child {
+  text-align: center;
+  padding: 20px;
+  flex: 1; /* Занимает оставшееся пространство */
+}
+
+.results-table {
+  width: 100%; /* Таблица занимает всю ширину родительского контейнера */
+  border-collapse: separate; /* Убирает слияние границ для работы border-spacing */
+  border-spacing: 3px; /* Устанавливает отступы между столбцами и строками */
+}
+
+.results-table th, .results-table td {
+  border: 1px solid #ddd; /* Добавляем границы для ячеек */
+  text-align: center; /* Текст в ячейках по центру */
+  padding: 8px; /* Отступ внутри ячеек */
+}
+
+.results-table th {
+  font-weight: bold; /* Жирный шрифт для заголовков */
+}
+
+.text-true {
+  color: rgba(255,0,195,0.62);
+  font-weight: bold;
+}
+
+.text-false {
+  color: firebrick;
+  font-weight: bold;
+}
+
+
+.x-buttons button,
+.radius-buttons button,
+.buttons-container button {
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  font-family: Arial;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.x-buttons button:hover,
+.radius-buttons button:hover,
+.buttons-container button:hover {
+  background-color: rgba(169, 169, 169, 0.27);
+  border: 1px solid #ccc;
+}
+
+.x-buttons button.selected,
+.radius-buttons button.selected {
+  background-color: rgba(255, 0, 195, 0.62);
+  color: white;
+}
+
+.coords-inputs {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 20px;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+
+
